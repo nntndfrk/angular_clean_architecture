@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  SUNRISE_URL: 'https://api.sunrise-sunset.org'
 };
