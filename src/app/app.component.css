@@ -1,0 +1,29 @@
+:host {
+  display: block;
+  background: #fafafa;
+}
+
+.container {
+  background: #fff;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.fx {
+  display: flex;
+  align-items: stretch;
+}
+
+.p1 {
+  padding: 1rem;
+  flex: 1;
+}
+
+.col {
+  flex-direction: column;
+}

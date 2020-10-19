@@ -2,8 +2,9 @@ import {Injectable} from '@angular/core';
 import {environment} from '../../../../../environments/environment';
 import {Observable} from 'rxjs';
 import {ApiDay} from '../model/api-day.model';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {map} from 'rxjs/operators';
+import {GetDayBody} from '../request/get-day-body';
 
 @Injectable({
   providedIn: 'root'
@@ -14,11 +15,9 @@ export class SunriseService {
   constructor(private http: HttpClient) {
   }
 
-  getDay(latitude: number, longitude: number): Observable<ApiDay> {
-    const params = new HttpParams();
-    params.set('lat', latitude.toString());
-    params.set('lng', longitude.toString());
-    return this.http.get<any>(`${this.baseUrl}/json`)
+  getDay(body: GetDayBody): Observable<ApiDay> {
+    const query = body.toApiQuery();
+    return this.http.get<any>(`${this.baseUrl}/json${query}`)
       .pipe(map(data => ApiDay.fromApi(data)));
   }
 }

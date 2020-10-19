@@ -1,0 +1,6 @@
+<div class="p1 full-width fx col" *ngIf="day">
+  <p>Схід: {{day.sunrise | date:'shortTime'}}</p>
+  <p>Захід: {{day.sunset | date: 'shortTime'}}</p>
+  <p>Полудень: {{day.solarNoon | date:'shortTime'}}</p>
+  <p>Тривалість: {{day.dayLength}}</p>
+</div>

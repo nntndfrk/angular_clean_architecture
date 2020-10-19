@@ -1,7 +1,7 @@
 import {ApiDay} from '../api/model/api-day.model';
 import {Day} from '../../domain/model/day.model';
 
-class DayMapper {
+export class DayMapper {
   static fromApi(day: ApiDay): Day {
     return new Day(
       new Date(day.sunrise),

@@ -1,9 +1,4 @@
 export class ApiDay {
-  // sunrise: string;
-  // sunset: string;
-  // solarNoon: string;
-  // dayLength: number;
-
   constructor(
     public sunrise: string,
     public sunset: string,
@@ -12,6 +7,7 @@ export class ApiDay {
   ) {
   }
 
+  /* DataMapper */
   static fromApi(map: Map<string, any>): ApiDay {
     /* tslint:disable:no-string-literal */
     return new ApiDay(
